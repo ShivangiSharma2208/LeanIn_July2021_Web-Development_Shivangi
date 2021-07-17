@@ -1,0 +1,108 @@
+*
+{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:larger;
+}
+body{
+    background-color: rgb(169, 161, 211);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow:hidden;
+
+}
+
+.clock
+{
+    width:500px;
+    height:500px;
+    background-color: beige;
+    border-radius: 100%;
+    border: 10px solid black;
+    position: relative; 
+}
+
+.clock .number
+{
+    --rotation:0;
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform:rotate(var(--rotation)); /*we want every num to rotate and be at its actual position as in the clock*/
+
+}
+
+.clock .num1{ --rotation: 30deg; }
+.num1 div{ transform: rotate(-30deg);}
+.clock .num2{ --rotation: 60deg; }
+.num2 div{ transform: rotate(-60deg);}
+.clock .num3{ --rotation: 90deg; }
+.num3 div{ transform: rotate(-90deg);}
+.clock .num4{ --rotation: 120deg; }
+.num4 div{ transform: rotate(-120deg);}
+.clock .num5{ --rotation: 150deg; }
+.num5 div{ transform: rotate(-150deg);}
+.clock .num6{ --rotation: 180deg; }
+.num6 div{ transform: rotate(-180deg);}
+.clock .num7{ --rotation: 210deg; }
+.num7 div{ transform: rotate(-210deg);}
+.clock .num8{ --rotation: 240deg; }
+.num8 div{ transform: rotate(-240deg);}
+.clock .num9{ --rotation: 270deg; }
+.num9 div{ transform: rotate(-270deg);}
+.clock .num10{ --rotation: 300deg; }
+.num10 div{ transform: rotate(-300deg);}
+.clock .num11{ --rotation: 330deg; }
+.num11 div{ transform: rotate(-330deg);}
+
+.clock .hand
+{
+    --rotation:0;
+    position:absolute;
+    bottom:50%;
+    left:50%;
+    background-color: black;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    transform-origin: bottom; 
+    z-index: 10;
+    transform: translateX(-50%)rotate(calc(var(--rotation)*1deg));
+}
+
+.clock::after
+{
+    content:'';
+    position:absolute;
+    background-color: black;
+    z-index: 11;
+    width: 15px;
+    height: 15px;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border-radius: 100%;
+
+}
+
+.clock .hand.second
+{
+     width:3px;
+     height:45%;
+     background-color: rgb(195, 0, 255);
+}
+
+.clock .hand.minute
+{
+     width:7px;
+     height:47%;
+     background-color:black;
+}
+
+.clock .hand.hour
+{
+     width:10px;
+     height:30%;  
+     background-color:black;
+}
